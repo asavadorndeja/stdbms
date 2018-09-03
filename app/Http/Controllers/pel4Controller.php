@@ -27,6 +27,9 @@ class Pel4Controller extends Controller
     {
         // dd($request);
 
+        $userPE = auth()->user()->userPE;
+
+
         if(isset($request->dateFrom)){
           $dateFrom = $request->dateFrom;
         }else{
@@ -42,7 +45,32 @@ class Pel4Controller extends Controller
         $userName = auth()->user()->name;
 
         $pel4s = pel4::where('create_by', $userName)->whereBetween('pel4Date',[$dateFrom, $dateTo])->orderBy('pel4Date', 'desc')->get();
-        return view('pages.pe.l4.index', compact('pel4s', 'userName', 'dateFrom', 'dateTo'));
+        return view('pages.pe.l4.index', compact('pel4s', 'userName', 'dateFrom', 'dateTo','userPE'));
+    }
+
+    public function indexDelete(Request $request)
+    {
+        // dd($request);
+
+        $userPE = auth()->user()->userPE;
+
+
+        if(isset($request->dateFrom)){
+          $dateFrom = $request->dateFrom;
+        }else{
+          $dateFrom = date('Y-m-d', strtotime('last Friday')-14*24*60*60);
+        }
+
+        if(isset($request->dateFrom)){
+          $dateTo = $request->dateTo;
+        }else{
+          $dateTo =date('Y-m-d', strtotime('this Friday'));
+        }
+
+        $userName = auth()->user()->name;
+
+        $pel4s = pel4::whereBetween('pel4Date',[$dateFrom, $dateTo])->orderBy('id', 'desc')->get();
+        return view('pages.pe.l4.indexDelete', compact('pel4s', 'userName', 'dateFrom', 'dateTo','userPE'));
     }
 
     /**
@@ -157,6 +185,10 @@ class Pel4Controller extends Controller
     public function destroy(pel4 $pel4)
     {
         //
+        // dd($pel4->id);
+        $pel4 = pel4::find($pel4->id)->delete();
+        return redirect()->route('pel4.indexDelete');
+
     }
 
     public function pel4ExportUser(Request $request)

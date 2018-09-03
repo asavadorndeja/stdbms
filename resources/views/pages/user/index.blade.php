@@ -14,11 +14,15 @@
         <div class="btn-group btn-sm" role="group">
           <a class="btn btn-primary" href="/home">Back</a>
           <!-- <a class="btn btn-primary" href="#">Create</a> -->
-          <a class="btn btn-primary" href="{{ route('user.create') }}">Create</a>
+          @if($userUser > 1)
+            <a class="btn btn-primary" href="{{ route('user.create') }}">Create</a>
+          @endif
         </div>
-        <div class="btn-group btn-sm" role="group">
-          <a class="btn btn-primary" href="/userExport" ><i class="icon-download-alt"> </i>Export</a>
-        </div>
+        @if($userUser > 1)
+          <div class="btn-group btn-sm" role="group">
+            <a class="btn btn-primary" href="/userExport" ><i class="icon-download-alt"> </i>Export</a>
+          </div>
+        @endif
         </div>
       </div>
     </div>
@@ -32,7 +36,9 @@
             <th>User name</th>
             <th>Email</th>
             <th>Edit</th>
-            <th>Delete</th>
+            @if($userUser > 1)
+              <th>Delete</th>
+            @endif
         </tr>
       </thead>
 
@@ -45,9 +51,12 @@
           </td>
 
           <td>
+            @if($userUser > 1)
+
                 {{ Form::open(array('route' => array('user.destroy', $row->id), 'method' => 'delete')) }}
                     <button class="btn btn-danger btn-xs" type="submit" >Delete</button>
                 {{ Form::close() }}
+            @endif
           </td>
 
           </tr>

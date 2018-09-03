@@ -17,9 +17,19 @@ class userController extends Controller
     public function index()
     {
       //
-      $users = user::all();
-      // dd($users);
-      return view('pages.user.index', compact('users'));
+
+      $userUser = auth()->user()->userUser;
+      $name = auth()->user()->name;
+
+      // dd($userUser);
+
+      if ($userUser >= 2){
+        $users = user::all();
+      }else{
+        $users = user::where('name', $name)->get();
+      };
+
+      return view('pages.user.index', compact('users','userUser'));
     }
 
     /**
@@ -90,8 +100,9 @@ class userController extends Controller
     {
         //
         // dd ($user);
+        $userUser = auth()->user()->userUser;
         $levelRange = array(1,2,3);
-        return view('pages.user.edit', compact('user','levelRange'));
+        return view('pages.user.edit', compact('user','levelRange','userUser'));
     }
 
     /**
@@ -104,7 +115,9 @@ class userController extends Controller
     public function update(Request $request, user $user)
     {
         //
-        // dd($request, $user);
+        $userUser = auth()->user()->userUser;
+
+        if($userUser >= 2){
 
         $this->validate(request(), [
           'password' => 'required',
@@ -130,6 +143,8 @@ class userController extends Controller
           'userMM' => request('userMM'),
           'userQA' => request('userQA')
         ]);
+
+      }
 
         if (request('password') != $user->password){
           $user->update([

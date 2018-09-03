@@ -66,7 +66,12 @@
                 <!-- {!! Form::Text('pel4Hour', null, ['required', 'class' => $Col2, 'placeholder' => 'Hour']) !!} -->
                 <select name="pel4Hour" id="pel4Hour" class="form-control input-md">
                     @foreach($timeItems as $timeItem)
+                      @if($timeItem == 1)
+                        <option selected value="{{ $timeItem }}">{{ $timeItem }}</option>
+                      @else
                         <option value="{{ $timeItem }}">{{ $timeItem }}</option>
+                      @endif
+                        <!-- <option value="{{ $timeItem }}">{{ $timeItem }}</option> -->
                     @endforeach
                   </select>
 
@@ -178,7 +183,7 @@
       var pel4Hour = document.getElementById("pel4Hour");
       var pel4Remark = document.getElementById("pel4Remark");
 
-      if (pel4Hour.value == "" || Number(pel4Hour.value) <= 0.5)
+      if (pel4Hour.value == "" || Number(pel4Hour.value) < 0.5)
       {
         alert("Please insert hour");
         return false;

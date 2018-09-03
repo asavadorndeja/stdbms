@@ -18,6 +18,9 @@
         <div class="btn-group btn-sm" role="group">
           <a class="btn btn-primary" href="/tel1Export" ><i class="icon-download-alt"> </i>Export</a>
         </div>
+        <!-- <div class="btn-group btn-sm" role="group">
+          <a class="btn btn-primary" href="/tel1Report" ></i>Report</a>
+        </div> -->
         </div>
       </div>
     </div>

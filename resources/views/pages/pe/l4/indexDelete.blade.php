@@ -12,19 +12,14 @@
   <div class="container">
       <div class="col-md-12">
         <div class="btn-group btn-sm" role="group">
-          <a class="btn btn-primary" href="/home">Back</a>
-          <a class="btn btn-primary" href="{{ route('pel4.create') }}">Create</a>
-        </div>
-
-
+          <a class="btn btn-primary" href="{{ route('pel4.index') }}">Back</a>
+          <!-- <a class="btn btn-primary" href="{{ route('pel4.create') }}">Create</a>
           @if ($userPE>1)
-        <div class="btn-group btn-sm" role="group">
+
             <a class="btn btn-primary" href="{{ route('pel4.edit', ['id'=>$userName]) }}">Edit</a>
             <a class="btn btn-primary" href="/pel4IndexDelete">Delete</a>
-        </div>
 
-          @endif
-
+          @endif -->
 
         </div>
 
@@ -48,7 +43,7 @@
 
       <div class="panel-body">
 
-  <form method="get" action="{{ action('pel4Controller@index') }}" class="form-horizontal">
+  <form method="get" action="{{ action('pel4Controller@indexDelete') }}" class="form-horizontal">
 
     {{ csrf_field() }}
 
@@ -88,13 +83,15 @@
         <table class="table table-hover table-striped">
             <thead>
               <tr>
+                  <th>id</th>
                   <th>Project number</th>
-                  <th>Project title</th>
                   <th>CTR number</th>
-                  <th>CTR title</th>
                   <th>Date</th>
                   <th>Hour(s)</th>
                   <th>Status</th>
+                  <th>Create by</th>
+                  <th>Approve by</th>
+                  <th>Delete</th>
                   <!-- <th>Create by</th>
                   <th>Approve by</th> -->
               </tr>
@@ -102,59 +99,27 @@
 
             @foreach ($pel4s as $row)
               <tr>
+                <td>{{ $row->id }}</td>
                 <td>{{ $row->tel1Number }}</td>
-                <td>{{ $row->tel1Title}} </td>
                 <td>{{ $row->pel2Number }}</td>
-                <td>{{ $row->pel2Title }}</td>
                 <!-- <td>{{ $row->tsDate }}</td> -->
                 <td>{{ Carbon\Carbon::parse($row->pel4Date )->format('d-M-y') }}</td>
                 <td>{{ $row->pel4Hour }}</td>
                 <td>{{ $row->pel4Status }}</td>
-                <!-- <td>{{ $row->create_by }}</td>
-                <td>{{ $row->approve_by }}</td> -->
-              </tr>
+                <td>{{ $row->create_by }}</td>
+                <td>{{ $row->approve_by }}</td>
+                  <td>
+                    {{ Form::open(array('route' => array('pel4.destroy', $row->id), 'method' => 'delete')) }}
+                          <button class="btn btn-danger btn-xs" type="submit" >Delete</button>
+                    {{ Form::close() }}
+                  </td>
             @endforeach
           </table>
         </div>
 
       </div>
 
-      <!-- <div class="container"> -->
 
-        <div class="panel panel-primary">
-            <div class="panel-heading">Timesheet data export</div>
-
-            <div class="panel-body">
-
-        <form method="get" action="{{ action('pel4Controller@pel4ExportUser') }}" class="form-horizontal">
-
-          {{ csrf_field() }}
-
-          <div class="form-group">
-            <div class="col-md-1 control-label">
-              <label>From</label>
-            </div>
-            <div class='col-md-3'>
-              <input type="date" class="form-control" id="dateFromExport" name="dateFromExport" value="{{ $dateFrom }}">
-            </div>
-            <div class="col-md-1 control-label">
-              <label>To:</label>
-            </div>
-            <div class='col-md-3'>
-              <input type="date" class="form-control" id="dateToExport" name="dateToExport" value="{{ $dateTo }}" >
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="col-sm-offset-1 col-sm-11">
-              <button type="Submit" value="Submit" class="btn btn-primary">Timesheet export</button>
-            </div>
-          </div>
-
-        </form>
-      </div>
-
-      <!-- </div> -->
 
 </div>
 @endsection

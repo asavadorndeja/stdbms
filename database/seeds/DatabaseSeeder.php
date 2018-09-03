@@ -19,5 +19,8 @@ class DatabaseSeeder extends Seeder
         $this->call(hrl1PositionTableSeeder::class);
         $this->call(tel1TableSeeder::class);
         $this->call(pel2TableSeeder::class);
+        $this->call(pel4TableSeeder::class);
+        // $this->call(tel1CostfactorTableSeeder::class);
+
     }
 }

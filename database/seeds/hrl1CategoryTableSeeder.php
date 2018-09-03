@@ -13,8 +13,8 @@ class hrl1CategoryTableSeeder extends Seeder
     {
         //
         $records = [
-          ['id'=>1, 'hrl1Category' =>'Management1'],
-          ['id'=>2, 'hrl1Category' =>'Management2'],
+          ['id'=>1, 'hrl1Category' =>'Management 1'],
+          ['id'=>2, 'hrl1Category' =>'Management 2'],
           ['id'=>3, 'hrl1Category' =>'Project management'],
           ['id'=>4, 'hrl1Category' =>'Professional'],
           ['id'=>5, 'hrl1Category' =>'Technical'],

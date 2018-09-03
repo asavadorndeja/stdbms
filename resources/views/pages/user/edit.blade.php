@@ -38,9 +38,11 @@
   <div class="form-group">
     {!! Form::label('password', 'Password', ['class' => $Col1]) !!}
     <div class='col-md-10'>
-    {!! Form::Text('password', $user->password, ['required', 'class' => $Col2]) !!}
+    {!! Form::text('password', $user->password, ['required', 'class' => $Col2,]) !!}
     </div>
   </div>
+
+  @if ($userUser > 1 )
 
   <div class="form-group">
     {!! Form::label('userAD', 'User admin level:', ['class' => $Col1]) !!}
@@ -140,6 +142,9 @@
         </select>
     </div>
   </div>
+
+  @endif
+
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">

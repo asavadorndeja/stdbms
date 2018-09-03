@@ -13,10 +13,10 @@ class hrl1PositionTableSeeder extends Seeder
     {
 
       $records = [
-        [ 'hrl1CategoryRef' => 'Management1', 'hrl1Position' => 'Senior director', 'hrl1Grade' =>'12'],
-        [ 'hrl1CategoryRef' => 'Management1', 'hrl1Position' => 'Director', 'hrl1Grade' =>'11'],
-        [ 'hrl1CategoryRef' => 'Management2', 'hrl1Position' => 'Senior engineering manager', 'hrl1Grade' =>'11'],
-        [ 'hrl1CategoryRef' => 'Management2', 'hrl1Position' => 'Engineering manager', 'hrl1Grade' =>'10'],
+        [ 'hrl1CategoryRef' => 'Management 1', 'hrl1Position' => 'Senior director', 'hrl1Grade' =>'12'],
+        [ 'hrl1CategoryRef' => 'Management 1', 'hrl1Position' => 'Director', 'hrl1Grade' =>'11'],
+        [ 'hrl1CategoryRef' => 'Management 2', 'hrl1Position' => 'Senior engineering manager', 'hrl1Grade' =>'11'],
+        [ 'hrl1CategoryRef' => 'Management 2', 'hrl1Position' => 'Engineering manager', 'hrl1Grade' =>'10'],
         [ 'hrl1CategoryRef' => 'Project management', 'hrl1Position' => 'Senior project manager', 'hrl1Grade' =>'11'],
         [ 'hrl1CategoryRef' => 'Project management', 'hrl1Position' => 'Project manager', 'hrl1Grade' =>'10'],
         [ 'hrl1CategoryRef' => 'Project management', 'hrl1Position' => 'Senior project engineer', 'hrl1Grade' =>'9'],
@@ -24,8 +24,8 @@ class hrl1PositionTableSeeder extends Seeder
         [ 'hrl1CategoryRef' => 'Professional', 'hrl1Position' => 'Chief engineer', 'hrl1Grade' =>'10'],
         [ 'hrl1CategoryRef' => 'Professional', 'hrl1Position' => 'Principal engineer', 'hrl1Grade' =>'9'],
         [ 'hrl1CategoryRef' => 'Professional', 'hrl1Position' => 'Senior engineer', 'hrl1Grade' =>'8'],
-        [ 'hrl1CategoryRef' => 'Professional', 'hrl1Position' => 'Associate engineer', 'hrl1Grade' =>'6'],
         [ 'hrl1CategoryRef' => 'Professional', 'hrl1Position' => 'Discipline engineer', 'hrl1Grade' =>'7'],
+        [ 'hrl1CategoryRef' => 'Professional', 'hrl1Position' => 'Associate engineer', 'hrl1Grade' =>'6'],
         [ 'hrl1CategoryRef' => 'Technical', 'hrl1Position' => 'Chief designer', 'hrl1Grade' =>'9'],
         [ 'hrl1CategoryRef' => 'Technical', 'hrl1Position' => 'Principal designer', 'hrl1Grade' =>'8'],
         [ 'hrl1CategoryRef' => 'Technical', 'hrl1Position' => 'Senior designer', 'hrl1Grade' =>'7'],

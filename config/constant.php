@@ -6,11 +6,16 @@ return [
         'Tender manager',
         'Tender engineer',
         'Engineering manager',
-        'Chief Engineering',
+        'Chief engineer',
         'Principal engineer',
         'Senior engineer',
         'Discipline engineer',
         'Associate engineer',
+        'Chief designer',
+        'Principal designer',
+        'Senior designer',
+        'Discipline designer',
+        'Associate designer',
         'Outsource manager',
         'Outsource officer',
         'Quality manager',
@@ -31,6 +36,7 @@ return [
           'Structural engineering',
           'Geotechincal engineering',
           'Installation engineering',
+          'Designer'
         ],
 
         'tel1Services' => [

@@ -36,6 +36,8 @@ Route::get('/api/StaffPosition/{empCategoryID}',function($hrl1Category)
 
 Route::resource('tel1','tel1Controller');
 Route::get('/tel1Export', 'tel1Controller@tel1Export');
+Route::get('/tel1Report', 'tel1Controller@tel1Report');
+
 
 Route::resource('pel1','pel1Controller');
 
@@ -43,6 +45,7 @@ Route::resource('pel2','pel2Controller');
 Route::get('/pel2Export', 'pel2Controller@pel2Export');
 
 Route::resource('pel4','pel4Controller');
+Route::get('/pel4IndexDelete', 'pel4Controller@indexDelete')->name('pel4.indexDelete');
 Route::get('/pel4ExportUser', 'pel4Controller@pel4ExportUser');
 Route::get('/pel4ExportAllUser', 'pel4Controller@pel4ExportAllUser');
 

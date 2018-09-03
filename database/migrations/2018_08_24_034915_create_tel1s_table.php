@@ -40,6 +40,8 @@ class CreateTel1sTable extends Migration
           $table->string('tel1Currency')->nullable();
           $table->double('tel1CurrencyConversion')->nullable();
           $table->double('tel1PriceTHB')->nullable();
+          $table->double('tel1PriceFactor')->nullable();
+          $table->double('tel1PriceFactorTHB')->nullable();
           $table->date('tel1FcDateStart')->nullable();
           $table->date('tel1FcDateFinish')->nullable();
           $table->float('tel1FcDuration')->nullable();
