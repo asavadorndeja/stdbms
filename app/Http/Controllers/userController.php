@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\hrl1;
-use App\user;
+// use App\user;
+use App\User;
 
 use Illuminate\Http\Request;
 

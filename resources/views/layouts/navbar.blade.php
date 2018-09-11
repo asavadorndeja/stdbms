@@ -21,7 +21,21 @@
             <ul class="nav navbar-nav">
 
               <li><a href='#'>AD</a></li>
-              <li><a href='{{ route('tel1.index')}}'>TE</a></li>
+              <!-- <li><a href='{{ route('tel1.index')}}'>TE</a></li> -->
+
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">TE<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{{ route('tel1.index')}}">Tender</a></li>
+                    <li><a href="/tel1TenderbyStatus">Tender by status</a></li>
+                    <li><a href="/tel1TenderbyPotential">Tender by potential</a></li>
+                    <li><a href="/tel1TenderAward">Tender award</a></li>
+                    <li><a href="/tel1TenderManPower">Tender man power</a></li>
+
+                    <!-- <li><a href='#'>Lesson learn (CR)</a></li> -->
+                    <!-- <li><a href='#'>Design review (CR)</a></li> -->
+                  </ul>
+              </li>
 
 
               <!-- <li><a href='{{ route('pel1.index')}}'>PE</a></li> -->

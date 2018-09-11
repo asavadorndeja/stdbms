@@ -15,7 +15,7 @@ class userTableSeeder extends Seeder
       //Create dataset
       $records = [
         ['name' => 'C1601', 'email' => 'p.asavadorndeja@synterra.co.th', 'password' => bcrypt(1234), 'userUser' => 2, 'userAD' => 2, 'userTE' => 2, 'userPE' => 2, 'userOU' => 2, 'userDC' => 2, 'userHS' => 2, 'userHR' => 2, 'userMM' => 2, 'userQA' => 2],
-        ['name' => 'P1601', 'email' => 'p.rujivipat@synterra.co.th', 'password' => bcrypt(1234), 'userUser' => 1, 'userAD' => 1, 'userTE' => 1, 'userPE' => 1, 'userOU' => 1, 'userDC' => 1, 'userHS' => 1, 'userHR' => 2, 'userMM' => 2, 'userQA' => 1],
+        ['name' => 'P1601', 'email' => 'p.rujivipat@synterra.co.th', 'password' => bcrypt(1234), 'userUser' => 1, 'userAD' => 1, 'userTE' => 2, 'userPE' => 2, 'userOU' => 1, 'userDC' => 1, 'userHS' => 1, 'userHR' => 2, 'userMM' => 2, 'userQA' => 1],
         ['name' => 'P1602', 'email' => 'm.assavinvipart@synterra.co.th', 'password' => bcrypt(1234), 'userUser' => 0, 'userAD' => 0, 'userTE' => 0, 'userPE' => 0, 'userOU' => 0, 'userDC' => 0, 'userHS' => 0, 'userHR' => 0, 'userMM' => 0, 'userQA' => 0],
         ['name' => 'P1603', 'email' => 'p.srivarangkul@synterra.co.th', 'password' => bcrypt(1234), 'userUser' => 1, 'userAD' => 1, 'userTE' => 1, 'userPE' => 1, 'userOU' => 1, 'userDC' => 1, 'userHS' => 2, 'userHR' => 1, 'userMM' => 1, 'userQA' => 1],
         ['name' => 'P1604', 'email' => 'n.khumwongsakul@synterra.co.th', 'password' => bcrypt(1234), 'userUser' => 1, 'userAD' => 1, 'userTE' => 1, 'userPE' => 1, 'userOU' => 1, 'userDC' => 1, 'userHS' => 1, 'userHR' => 1, 'userMM' => 1, 'userQA' => 1],

@@ -36,7 +36,12 @@ Route::get('/api/StaffPosition/{empCategoryID}',function($hrl1Category)
 
 Route::resource('tel1','tel1Controller');
 Route::get('/tel1Export', 'tel1Controller@tel1Export');
-Route::get('/tel1Report', 'tel1Controller@tel1Report');
+Route::get('/tel1TenderbyStatus', 'tel1Controller@tel1TenderbyStatus');
+Route::get('/tel1TenderbyPotential', 'tel1Controller@tel1TenderbyPotential');
+Route::get('/tel1TenderAward', 'tel1Controller@tel1TenderAward');
+Route::get('/tel1TenderManPower', 'tel1Controller@tel1TenderManPower');
+
+// Route::resource('tel2','tel2Controller');
 
 
 Route::resource('pel1','pel1Controller');

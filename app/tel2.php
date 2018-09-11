@@ -5,7 +5,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class tel1 extends Model
+
+class tel2 extends Model
 {
     //
 
@@ -17,9 +18,9 @@ class tel1 extends Model
 
     protected $dates = ['deleted_at'];
 
-    public function tel1Comments()
+    public function tel1Post()
     {
-      return $this->hasMany(tel2::class);
+    return $this->belongsTo(tel1::class);
     }
 
 }

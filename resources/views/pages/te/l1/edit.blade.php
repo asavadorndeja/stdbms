@@ -321,6 +321,23 @@
     </div>
   </div>
 
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">Tender note</div>
+      <div class="panel-body">
+        <div class="form-group">
+          {!! Form::label('tel1Note', 'Note:', ['class' => $Col1]) !!}
+
+          <div class='col-md-10'>
+            {!! Form::Textarea('tel1Note', null, ['class' => $Col2]) !!}
+          </div>
+        </div>
+
+        </div>
+
+      </div>
+    </div>
+
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
         {!! Form::submit('Update', ['class' => 'btn btn-primary btn-md'] ) !!}
@@ -331,8 +348,6 @@
 </div>
 
 {!! Form::close() !!}
-
-<hr>
 
 
 @endsection

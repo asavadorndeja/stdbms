@@ -6,6 +6,8 @@ use App\tel1;
 use App\pel2;
 use App\pel4;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class Pel4Controller extends Controller
 {
@@ -145,6 +147,15 @@ class Pel4Controller extends Controller
         $pel4s = $pel4ss->where('pel4Status', 'Submitted');
         $dateFrom = date('Y-m-d', strtotime('last Friday')-14*24*60*60);
         $dateTo =date('Y-m-d', strtotime('this Friday'));
+
+        // $pel4s = pel4::leftJoin('hrl1s','pel4s.create_by','=','hrl1s.name')
+        //   ->where('pel4Status', 'Submitted')
+        //   ->wherein('pel4s.create_by', $userTeam)
+        //   ->get();
+
+        // $pel4x =$pel4xx->whereIn('create_by', $userTeam)->get();
+
+        // dd($pel4xx[0]);
 
         // dd($userTeam, $pel4ss);
         return view('pages.pe.l4.edit',compact('pel4s', 'userName', 'userTeam','dateFrom','dateTo'));

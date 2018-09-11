@@ -46,7 +46,10 @@ return [
             'Riser engineering',
             'Pipeline engineering',
             'Geotechnical engineering',
+            'Subsea engineering',
             'Naval architech',
+            'Design review',
+            'Secondment',
             'Others',
           ],
 
@@ -58,10 +61,10 @@ return [
             'Detail engineering',
             'Installation engineering',
             'Design verification',
-            'Secondment',
             'Callout service',
             'Training service',
             'Miscellaneous service',
+            'Master service agreement',
           ],
 
           'tel1BidMethods' => [
@@ -83,7 +86,6 @@ return [
               '',
               'Inquiry',
               'Submitted',
-              'Active',
               'Turndown',
               'Awarded',
               'Completed',
@@ -100,10 +102,13 @@ return [
               'tel1Reasons' => [
                   '',
                   'Unknown',
-                  'No execution',
+                  'Not execution',
+                  'Not qualify',
                   'Technical',
                   'Commercial',
                   'Technical and commercial',
+                  'Decline',
+                  'Unsuccessful follow up',
                 ],
 
             'Currencies' => [

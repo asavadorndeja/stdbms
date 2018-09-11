@@ -180,6 +180,8 @@ return [
 
         // Manually added
         Collective\Html\HtmlServiceProvider::class,
+        //Laravel charts
+        ConsoleTVs\Charts\ChartsServiceProvider::class,
     ],
 
     /*

@@ -96,7 +96,7 @@
           </form>
         </div>
       </div>
-</div>
+    </div>
 
 
 
@@ -130,7 +130,9 @@
                 </tr>
               </thead>
             </table>
-
+            <div class="container">
+              <label id='sumHours'>Total hour(s)</label>
+            </div>
 
           {!! Form::submit('Submit', ['class' => 'btn btn-primary btn-md'] ) !!}
           </div>
@@ -158,10 +160,35 @@
       loadpel2(tel1Number);
   });
 
+  function getSum(){
+
+    var sum = 0;
+    var val = 0;
+
+    var table = document.getElementById('pel4Table');
+    for (var r = 1, n = table.rows.length; r < n; r++) {
+        for (var c = 3, m = 4; c < m; c++) {
+            // alert(table.rows[r].cells[c].innerHTML);
+            val = Number(table.rows[r].cells[c].innerHTML);
+            sum = sum + val;
+        }
+
+    console.log(sum);
+
+    var text = "Total hours = " + sum ;
+
+    document.getElementById('sumHours').innerHTML = text;
+
+    }
+
+    // console.log(table);
+
+  }
+
   function loadpel2(tel1Number){
     $.get("{{ url('api/pel2') }}/"+tel1Number, function(data){
         $('#pel2id').empty();
-        console.log(data);
+        // console.log(data);
         $.each(data, function(index, subCatObj){
           $('#pel2id').append('<option value="'+subCatObj.id+'">'+subCatObj.pel2Number+': '+subCatObj.pel2Title+'</option>');
         });
@@ -229,6 +256,8 @@
             // row.insertCell(12).innerHTML= '<input type="text" name="pel4Remark['+rowCount+']" value="'+pel4Remark.value+'">';
 
       console.log(tel1id);
+      getSum();
+
 
   }
 
@@ -237,6 +266,8 @@
       var index = obj.parentNode.parentNode.rowIndex;
       var table = document.getElementById("pel4Table");
       table.deleteRow(index);
+      getSum();
+
 
   }
 

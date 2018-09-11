@@ -6,20 +6,28 @@
 <?php $Col2 = 'form-control'; ?>
 
 <div class="container">
-  <div class="col-md-12">
-    <h1>CTR: Edit</h1>
+  <div class="container">
+    <div class="col-md-12">
+      <h1>CTR: Edit</h1>
+    </div>
   </div>
+  <div class="container">
     <div class="col-md-6">
       <a class="btn btn-primary btn-md" href="{{ route('pel2.index', ['tel1Number'=>$tel1Number]) }}">Back</a>
     </div>
   </div>
-</div>
+  </div>
 
 <hr>
 
 {!! Form::model($pel2s, ['method'=>'PATCH', 'route' => ['pel2.update', $pel2s->id], 'class' => 'form-horizontal']) !!}
 
 <div class="container">
+  <div class="panel panel-primary">
+      <div class="panel-heading">CTR Edit</div>
+
+      <div class="panel-body">
+
 
   <div class="form-group">
     {!! Form::label('Project Number', 'Project Number', ['class' => $Col1]) !!}
@@ -64,5 +72,8 @@
 
 {!! Form::close() !!}
 
+</div>
+</div>
+</div>
 
 @endsection

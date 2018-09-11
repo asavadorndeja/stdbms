@@ -185,7 +185,7 @@
     <div class="col-md-10">
       <select name="hrl1Position" id="hrl1Position" class="form-control input-md">
           @foreach($hrPositions as $hrPosition)
-            <option value="{{ $hrPosition->hrl1Position }}">{{ $hrPosition->hrl1Position }}</option>
+            <option value="{{ $hrPosition->hrl1Position }}" {{ $hrPosition->hrl1Position  === $hrl1->hrl1Position? 'selected' : '' }}>{{ $hrPosition->hrl1Position }}</option>
           @endforeach
         </select>
     </div>

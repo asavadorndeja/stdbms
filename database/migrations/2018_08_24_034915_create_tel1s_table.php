@@ -47,6 +47,7 @@ class CreateTel1sTable extends Migration
           $table->float('tel1FcDuration')->nullable();
           $table->float('tel1FcManPower')->nullable();
           $table->float('tel1FcManHour')->nullable();
+          $table->text('tel1Note')->nullable();
           $table->string('create_by')->nullable();
           $table->timestamps();
           $table->softDeletes();
